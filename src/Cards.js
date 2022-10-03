@@ -37,8 +37,6 @@ export default function Cards({ index, flashcards, perguntas, respostas, setCoun
     }
 
     function handleColor(){
-        console.log(`status${index} `,status[index])
-        console.log(status[index] === undefined)
         if(status[index] === undefined){
             console.log("und")
             return "#333333"
@@ -78,7 +76,7 @@ const PerguntaFechada = styled.div`
     justify-content: space-between;
 
     p{
-        font-family: 'Recursive';
+        font-family: 'Recursive', sans-serif;
         font-style: normal;
         font-weight: 700;
         font-size: 16px;

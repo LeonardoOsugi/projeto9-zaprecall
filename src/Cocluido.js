@@ -40,7 +40,7 @@ export default function Concluido({index,status, setStatus, cor, text, setCount,
 
 const BotaoConcluido = styled.div`
     width: 90px;
-        font-family: 'Recursive';
+        font-family: 'Recursive', sans-serif;
         font-style: normal;
         font-weight: 400;
         font-size: 12px;
