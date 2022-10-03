@@ -1,37 +1,21 @@
 import styled from "styled-components";
 
-export default function BotoesConcluidos(){
+import Concluido from "./Cocluido"
+
+export default function BotoesConcluidos({index,status, setStatus, setCount, viraPergunta, respostas,setViraPergunta,  setTamanho, setCor, setDirecao, setNum, flashcards, setViraImg}){
     const textCorConcluido = [{text: "Não Lembrei", cor: "#FF3030"}, {text: "Quase não lembrei", cor: "#FF922E"}, {text: "Zap!", cor: "#2FBE34"} ]
     return(
-        <ContainerBotoes>
+        <ContainerBotoes display={viraPergunta === respostas?"flex":"none"}>
                 {textCorConcluido.map((tc, i) => 
-                     <BotaoConcluido key={i} cor={tc.cor}>{tc.text}</BotaoConcluido>
+                     <Concluido key={i} cor={tc.cor} text={tc.text} setCount={setCount} index={index} status={status} setStatus={setStatus}setViraPergunta={setViraPergunta}  setTamanho={ setTamanho} setCor={setCor} setDirecao={setDirecao} setNum={setNum} flashcards={flashcards} setViraImg={setViraImg}/>
                 )}
-                </ContainerBotoes>
+        </ContainerBotoes>
     )
 }
 
 const ContainerBotoes = styled.div`
-    display: flex;
-    width: 80%;
-    justify-content: space-between;
-    margin: 20px;
+    display: ${props => props.display};
+    width: 100%;
+    justify-content: space-around;
+    margin-top: 5px;
   `;
-
-const BotaoConcluido = styled.div`
-    width: 90px;
-        font-family: 'Recursive';
-        font-style: normal;
-        font-weight: 400;
-        font-size: 12px;
-        line-height: 14px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        color: #FFFFFF;
-        background-color: ${props => props.cor};
-        border-radius: 5px;
-        border: 1px solid blue;
-        padding:5px;
-`;

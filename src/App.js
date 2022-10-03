@@ -2,22 +2,27 @@ import styled from "styled-components";
 
 import Logo from "./ContainerLogo"
 
-import Perguntas from  "./Perguntas"
+import Perguntas from "./Perguntas"
 
-import BotoesConcluidos from "./BotoesConcluidos"
+
+import { useState } from "react";
+import GlobalStyle from "./assets/css/GlobalStyle";
 
 export default function App() {
 
-
+    const [count, setCount] = useState(0);
     return (
-        <ScreenContainer>
-            <Logo />
-            <Perguntas />
-            <FooterConcluidos>
-                <BotoesConcluidos />
-                0/4 CONCLUÍDOS
-            </FooterConcluidos>
-        </ScreenContainer>
+        <>
+            <GlobalStyle />
+            <ScreenContainer>
+                <Logo />
+                <Perguntas setCount={setCount} />
+                <FooterConcluidos>
+
+                    {count}/8 CONCLUÍDOS
+                </FooterConcluidos>
+            </ScreenContainer>
+        </>
     );
 }
 
